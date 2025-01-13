@@ -18,6 +18,12 @@
       </p>
       <% } %>
 
+      <% if (user) { %>
+        <a href="/users/<%= user._id %>/employees/new">Add Employee</a>
+      <% } else { %>
+        <p>Please log in to add employees.</p>
+      <% } %>
+      
       <p><a href="/protected">Get into the VIP Users Only lounge!</a></p>
   </body>
 </html>
