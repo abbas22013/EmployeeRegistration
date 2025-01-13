@@ -29,6 +29,16 @@
       </a>
       
 
+
+      <form
+      action="/users/<%= user._id %>/employees/<%= employee._id %>?_method=DELETE"
+      method="POST"
+  >
+    <button type="submit">Delete this employee</button>
+  </form>
+  
+
+
  
   </body>
 </html>

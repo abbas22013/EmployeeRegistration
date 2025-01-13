@@ -106,6 +106,24 @@ router.put('/:employeeId', async (req, res) => {
     }
   });
   
+
+
+
+
+
+  router.delete('/:employeeId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+
+      currentUser.employees.id(req.params.employeeId).deleteOne();
+      await currentUser.save();
+      res.redirect(`/users/${currentUser._id}/employees`);
+    } catch (error) {
+      console.log(error);
+      res.redirect('/');
+    }
+  });
+  
   
 
   
