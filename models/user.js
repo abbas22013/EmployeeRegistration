@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  employess: [employeesSchema]
+  employees: [employeesSchema]
 });
 
 module.exports = mongoose.model('User', userSchema);
