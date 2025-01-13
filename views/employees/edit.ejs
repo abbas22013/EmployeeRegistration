@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Employee - <%= employee.employeeName %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit Employee: <%= employee.employeeName %></h1>
+
+  <!-- Form to edit employee -->
+  <form
+    action="/users/<%= user._id %>/employees/<%= employee._id %>?_method=PUT"
+    method="POST"
+  >
+    <!-- Employee Name -->
+    <label for="employeeName">Employee Name:</label>
+    <input
+      type="text"
+      name="employeeName"
+      id="employeeName"
+      value="<%= employee.employeeName %>"
+      required
+    >
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      value="<%= employee.email %>"
+      required
+    >
+
+    <!-- Notes -->
+    <label for="notes">Notes:</label>
+    <textarea
+      name="notes"
+      id="notes"
+    ><%= employee.notes %></textarea>
+
+    <!-- Status -->
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option value="IT" <%= employee.status === "IT" ? "selected" : "" %>>IT</option>
+      <option value="HR" <%= employee.status === "HR" ? "selected" : "" %>>HR</option>
+      <option value="Marketing" <%= employee.status === "Marketing" ? "selected" : "" %>>Marketing</option>
+      <option value="Management" <%= employee.status === "Management" ? "selected" : "" %>>Management</option>
+      <option value="Accounting" <%= employee.status === "Accounting" ? "selected" : "" %>>Accounting</option>
+    </select>
+
+    <!-- Submit Button -->
+    <button type="submit">Update Employee</button>
+  </form>
+</body>
+</html>

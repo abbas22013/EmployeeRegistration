@@ -64,6 +64,50 @@ router.get('/new', async (req, res) => {
     }
   });
 
+
+
+
+
+  // Route to render the edit form for an employee
+router.get('/:employeeId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+
+      const employee = currentUser.employees.id(req.params.employeeId);
+      res.render('employees/edit.ejs', {
+        user: currentUser,
+        employee: employee,
+      });
+    } catch (error) {
+      console.log(error);
+      res.redirect('/');
+    }
+  });
+
+
+
+
+
+  // Route to handle updating employee details
+router.put('/:employeeId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+
+      const employee = currentUser.employees.id(req.params.employeeId);
+      employee.employeeName = req.body.employeeName;
+      employee.email = req.body.email;
+      employee.notes = req.body.notes;
+      employee.status = req.body.status;
+      await currentUser.save();
+      res.redirect(`/users/${currentUser._id}/employees`);
+    } catch (error) {
+      console.log(error);
+      res.redirect('/');
+    }
+  });
+  
+  
+
   
 
 
