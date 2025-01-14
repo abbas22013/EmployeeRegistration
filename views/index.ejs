@@ -6,6 +6,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .sign-out-btn {
+        display: inline-block;
+        background-color: #ff4d4d;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .sign-out-btn:hover {
+        background-color: #e63e3e;
+      }
+
+      .add-employee-btn {
+        display: inline-block;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        text-align: center;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .add-employee-btn:hover {
+        background-color: #45a049;
+      }
+
+      .vip-lounge {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <% if (user) { %>
