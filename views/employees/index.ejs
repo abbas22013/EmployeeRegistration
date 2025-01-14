@@ -92,7 +92,7 @@
       <% employees.forEach((employee)=>{ %>
       <li>
         <a href="/users/<%= user._id %>/employees/<%= employee._id %>">
-          <%= employee.employeeName %> at <%= employee.email %>
+          <%= employee.employeeName %> <br> <%= employee.email %>
         </a>
       </li>
       <% }) %>
