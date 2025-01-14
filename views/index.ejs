@@ -93,7 +93,7 @@
         <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
       </p>
       <% } %>
-
+<br>
       <% if (user) { %>
         <a href="/users/<%= user._id %>/employees/new">Add Employee</a>
       <% } else { %>
@@ -101,7 +101,14 @@
       <% } %>
       
       <p><a href="/protected">Get into the VIP Users Only lounge!</a></p>
-      <a href="/users/<%= user._id %>/employees" class="show-all-btn">Show All Employees</a>
+      
 
+
+      <% if (user) { %>
+        <a href="/users/<%= user._id %>/employees" class="show-all-btn">Show All Employees</a>
+      <% } else { %>
+        
+      <% } %>
+      
   </body>
 </html>
