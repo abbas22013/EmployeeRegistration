@@ -124,7 +124,7 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= employee.employeeName %> at <%= employee.email %></h1>
+    <h1><%= employee.employeeName %> <br> <%= employee.email %></h1>
 
     <% if (employee.notes) { %>
     <p>Notes: <%= employee.notes %></p>
