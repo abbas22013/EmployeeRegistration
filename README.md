@@ -7,7 +7,7 @@ This app is built using Node.js and Express, with an interactive front-end rende
 
 ## Getting Started
 
-- **Deployed App Link:** [Your Deployed App Link Here] ()
+- **Deployed App Link:** [Your Deployed App Link Here] (https://github.com/abbas22013/EmployeeRegistration)(https://abbas22013.github.io/EmployeeRegistration/)
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
